@@ -1,0 +1,260 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Cyberpunk';
+    src: url('Cyberpunk.ttf') format('truetype');
+}
+* {
+    font-family: 'Cyberpunk', sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: 15% 20% 65%; /* 2 columns, each taking up 1 fraction unit of space */
+    grid-template-rows: 35% 65%; /* 2 rows, the first one taking 30% of the grid height, the second one taking 70% */
+    height: 100%; /* set the grid container to take up the full viewport height */
+    width: 100%;
+}
+
+.button-column{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    background-image: url("button_bg.png");
+    display: block;
+}
+
+    .button-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: Top;
+    }
+
+    #image-button {
+        position: relative;
+        width: 30%;
+        height: 45%;
+        border-radius: 50%; /* makes the button round */
+        padding: 0;
+        background-image: url("Button.png");
+        background-size: 100%;
+        transition: transform 0.1s ease-in-out;
+    }
+
+    #image-button:active {
+      transform: translateY(6px);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3) inset;
+    }
+
+.fighters-column{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: grey;
+    display: grid;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    grid-template-rows: 50px 100%;
+    height: 100%;
+    width: 100%;
+}
+
+    .fighters-column-name{
+        grid-row: 1;
+        background-color: blue;
+    }
+
+    .fighters-grid-column-buttons{
+        grid-row: 2;
+        background-color: brown;
+    }
+
+    .fighter-button{
+        height: 50px;
+        width: 100%;
+        padding: 0px;
+        border: 0px;
+        display: block;
+    }
+
+    .fighter-tooltip {
+        position: absolute;
+        display: none;
+        align-items: center;
+        z-index: 1;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        color: black;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    #fighter1{
+        background-image: url("PlaceHolderImage.png");
+    }
+
+    #fighter2{
+        background-image: url("PlaceHolderImage.png");
+    }
+
+.buildings-column{
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    position: relative;
+    grid-template-rows: 50px 100%;
+    height: 100%;
+    width: 100%;
+}
+
+    .buildings-grid-column{
+        grid-row: 2;
+        background-color: azure;
+        font-size: 0;
+    }
+
+    .building-tooltip {
+        position: absolute;
+        display: none;
+        align-items: center;
+        z-index: 1;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        color: black;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    .buildings-column-name{
+        grid-row: 1;
+        background-color: purple;
+    }
+
+    .building{
+        height: 50px;
+        width: 20%;
+        display: inline-block;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+        #building1{ /*aici pentru buton doar ii schimbi poza*/
+            background-image: url("PlaceHolderImage.png");
+        }
+
+        #building2{
+            background-image: url("PlaceHolderImage.png");
+        }
+
+        #building3{
+            background-image: url("PlaceHolderImage.png");
+        }
+
+    .progress-bar {
+        position: relative;
+        bottom: 10px;
+        display: inline-block;
+        width: 80%;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 20px;
+    }
+
+        .progress-bar-glow {
+            position: relative;
+            width: 0%;
+            height: 100%;
+            background-color: red;
+            border-radius: 20px;
+            animation-name: glow;
+            animation-duration: 1s;
+            animation-timing-function: ease; /*nu e liniar, dar arata mai bine, o lutem face liniara cu comanda de mai jos
+            animation-timing-function: linear;*/
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes glow {
+            from {
+                width: 0%;
+                box-shadow: 0 0 10px red;
+            }
+            to {
+                width: 100%;
+                box-shadow: 0 0 10px red;
+            }
+        }
+
+.shop-grid{
+    grid-column: 3;
+    grid-row: 1/ span 2;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 5% 35% 60%;
+    background: beige;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+    .middle-row{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .shop-name{
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .shop-grid-column{
+        cursor: grab;
+        grid-column: 2;
+        grid-row: 2;
+        position: relative;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+        .upgradeButton{
+            display: none;
+            width: 80px;
+            height: 80px;
+        }
+
+        #upgrade1{
+            background-color: aqua;
+        }
+
+        #upgrade2{
+            background-color: blue;
+        }
+
+        #upgrade3{
+            background-color: blueviolet;
+        }
+
+        .settings{
+            grid-column: 2;
+            grid-row:3;
+        }
+
+            #resetButton{
+                height: 70px;
+                width: 70px;
+            }

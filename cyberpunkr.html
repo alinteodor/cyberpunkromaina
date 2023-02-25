@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CyberPunkRomania</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <audio>
+            <source src="clickSound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+
+        <div class = "grid-container">
+            
+            <div class = "button-column">
+                
+                <h1>Clicker Game</h1>
+
+                <h3>Points: <span id="points">0</span></h3>
+                
+                <div class = "button-container">
+                    <button id="image-button"></button>
+                </div>
+            </div>
+
+            <div class = "fighters-column">
+                
+                <div class = "fighters-column-name">
+                    <p>FIGHTERS</p>
+                </div>
+
+                <div class = "fighters-grid-column-buttons">
+                    <button class = "fighter-button" id = "fighter1" ></button>
+                    <div class = "fighter-tooltip" id = "fighter1-tooltip">
+                        This fighter is at level <span id = "fighter1-level">0</span><br>
+                        The next upgrade costs <span id = "fighter1-cost">0</span>
+                    </div>
+                    
+                    <button class = "fighter-button" id = "fighter2" ></button>
+                </div>
+
+            </div>
+
+            <div class = "buildings-column">
+
+                <div class = "buildings-column-name">
+                    <p>BUILDINGS</p>
+                </div>
+
+                <div class = "buildings-grid-column">
+
+                    <button class = "building" id = "building1"></button>
+                    <div class = "building-tooltip" id = "building1-tooltip">
+                       This building is at level <span id = "building1-level">0</span><br>
+                       The next upgrade costs <span id = "building1-cost">0</span>
+                    </div>
+                    <div class = "progress-bar">
+                        <div class="progress-bar-glow" id = "progress-bar-1"></div>
+                    </div>
+
+                    <button class = "building" id = "building2"></button>
+                    <div class = "building-tooltip" id = "building2-tooltip">
+                        This building is at level <span id = "building2-level">0</span><br>
+                        The next upgrade costs <span id = "building2-cost">0</span>
+                     </div>
+                    <div class = "progress-bar">
+                        <div class="progress-bar-glow" id = "progress-bar-2"></div>
+                    </div>
+
+                    <button class = "building" id = "building3"></button>
+                </div>
+                
+            </div>
+
+            <div class = "shop-grid">
+
+                <div class = "shop-name">
+                    <p> SHOP </p>
+                </div>
+
+                <div id = "shop-grid-column" class="shop-grid-column">
+
+                    <button class = "upgradeButton" id = "upgrade1"></button>
+
+                    <button class = "upgradeButton" id = "upgrade2"></button>
+
+                    <button class = "upgradeButton" id = "upgrade3"></button>
+                    
+                </div>
+
+                <div class="settings">
+                    <button id = "resetButton">RESET</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="main.js"></script> 
+
+    </body>
+</html>
